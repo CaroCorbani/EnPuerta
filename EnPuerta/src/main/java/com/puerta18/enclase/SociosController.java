@@ -100,7 +100,17 @@ public class SociosController {
 	}
 	
 	@GetMapping("/socios/nuevo/procesar") // inserta nuevos socios
-	public String insertarNuevo(@RequestParam String nombre,@RequestParam String apellido,@RequestParam String email, @RequestParam String dni) throws SQLException {
+	public String insertarNuevo(@RequestParam String nombre,
+			@RequestParam String apellido,
+			@RequestParam String email,
+			@RequestParam String dni,
+			@RequestParam String celular,
+			@RequestParam String telefono,
+			@RequestParam String telefono2,
+			@RequestParam String direccion,
+			@RequestParam String genero,
+			@RequestParam String localidad,
+			@RequestParam Date fecha_de_nacimiento) throws SQLException {
 		
 
 		Connection connection;
@@ -110,12 +120,20 @@ public class SociosController {
 				env.getProperty("spring.datasource.username"),
 				env.getProperty("spring.datasource.password"));
 		
-		PreparedStatement consulta = connection.prepareStatement("INSERT INTO socios(nombre,apellido,email,dni) VALUES(?,?,?,?);");
+		PreparedStatement consulta = connection.prepareStatement("INSERT INTO socios(nombre,apellido,email,dni,celular,telefono,telefono2,direccion,genero,localidad,fecha_de_nacimiento) VALUES(?,?,?,?,?,?,?,?,?,?,?);");
 		
 		consulta.setString(1,nombre);
 		consulta.setString(2,apellido);
 		consulta.setString(3,email);
 		consulta.setString(4,dni);
+		consulta.setString(5,celular);
+		consulta.setString(6,telefono);
+		consulta.setString(7,telefono2);
+		consulta.setString(8,direccion);
+		consulta.setString(9,genero);
+		consulta.setString(10,localidad);
+		consulta.setDate(11,fecha_de_nacimiento);
+
 		consulta.execute();
 		connection.close();
 		
