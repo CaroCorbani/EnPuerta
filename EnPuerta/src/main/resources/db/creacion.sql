@@ -1,12 +1,6 @@
-DROP TABLE IF EXISTS public.socios;
-DROP TABLE IF EXISTS public.checks;
+-- Table: public.socios
 
-DROP SEQUENCE IF EXISTS public.checks_id_seq;
-
-DROP SEQUENCE IF EXISTS public.socios_id_seq;
-
-CREATE SEQUENCE public.socios_id_seq;
-CREATE SEQUENCE public.checks_id_seq;
+-- DROP TABLE public.socios;
 
 CREATE TABLE public.socios
 (
@@ -14,22 +8,16 @@ CREATE TABLE public.socios
     nombre text COLLATE pg_catalog."default" NOT NULL,
     apellido text COLLATE pg_catalog."default" NOT NULL,
     email text COLLATE pg_catalog."default",
-    dni integer NOT NULL,
+    dni text COLLATE pg_catalog."default" NOT NULL,
+    celular text COLLATE pg_catalog."default",
+    telefono text COLLATE pg_catalog."default" NOT NULL,
+    telefono2 text COLLATE pg_catalog."default" NOT NULL,
+    direccion text COLLATE pg_catalog."default" NOT NULL,
+    genero text COLLATE pg_catalog."default" NOT NULL,
+    localidad text COLLATE pg_catalog."default" NOT NULL,
+    presente boolean NOT NULL DEFAULT false,
+    fecha_de_nacimiento date NOT NULL,
     CONSTRAINT socios_pkey PRIMARY KEY (id)
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
-
--- Table: public.checks
-CREATE TABLE public.checks
-(
-    id integer NOT NULL DEFAULT nextval('checks_id_seq'::regclass),
-    id_socio integer NOT NULL,
-    momento timestamp with time zone NOT NULL,
-    tipo text COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT checks_pkey PRIMARY KEY (id)
 )
 WITH (
     OIDS = FALSE
