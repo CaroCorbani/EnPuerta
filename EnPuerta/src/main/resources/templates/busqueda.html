@@ -1,0 +1,23 @@
+<html>
+ 
+ <head>
+ 	<link rel="stylesheet" href="/css/estilos.css"/>
+ </head>
+ <body>
+ 	<h1> Socios</h1>
+ 	
+ 	<form action="/socios/busqueda">
+ 	<input type="text" name="buscar">
+ 	<input type="submit" name="buscarboton" value="Buscar">
+ 	</form>
+ 	
+ 		<div class="" th:each="socio:${socios}">
+	
+	<p><span th:text="${socio.nombre}"> </span>/
+ 	<span th:text="${socio.apellido}"> </span> /
+ 	<span th:text="${socio.dni}"> </span> / 
+ 	<a th:href="|/socios/checkin/${socio.id}|">Check in</a></p>
+ 	<a th:href="|/socios/checkout/${socio.id}|">Check out</a></p><hr>
+ 	</div>
+ </body>
+</html>
