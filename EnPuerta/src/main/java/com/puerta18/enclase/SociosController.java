@@ -26,6 +26,11 @@ public class SociosController {
 
 	// landing page, muestra un formulario de busqueda 
 	// y tambien muestra los resultados con un parametro no requerido 
+	@GetMapping("/cliente")
+	public String clientePrueba() {
+		return "cliente";
+	}
+	
 	@GetMapping("/")
 	public String landing() {
 		return "index";
