@@ -13,7 +13,7 @@
  	
  		<div class="" th:each="socio:${socios}">
 	
-	<p><span th:text="${socio.nombre}"> </span>/
+	<p><span th:text="${socio.nombre}"> </span> 
  	<span th:text="${socio.apellido}"> </span> /
  	<span th:text="${socio.dni}"> </span> / 
  	<a th:href="|/socios/checkin/${socio.id}|">Check in</a></p>

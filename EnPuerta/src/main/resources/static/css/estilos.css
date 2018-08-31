@@ -1,6 +1,6 @@
 body {
-	background-color: #fbf4ff;
-	color:#7c5b8e;
+	background-color: #aa4ead;
+	color:white;
 	text-align:center;
 }
 
@@ -13,14 +13,13 @@ li a:hover{
 }
 
 a{
-	color:#7c5b8e;
+	color:white;
 	text-decoration:none;
 	
 }
 
 
 h2{
-	text-align:center;
 	background-color:#ecc9ff;
 	
 }
