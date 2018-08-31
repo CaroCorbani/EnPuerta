@@ -1,0 +1,41 @@
+body {
+	background-color: #fbf4ff;
+	color:#7c5b8e;
+	text-align:center;
+}
+
+li a{
+	color: white;
+}
+
+li a:hover{
+	color: red;
+}
+
+a{
+	color:#7c5b8e;
+	text-decoration:none;
+	
+}
+
+
+h2{
+	text-align:center;
+	background-color:#ecc9ff;
+	
+}
+
+h2 a:hover{
+	color:black;
+	
+}
+
+.formu
+{
+	margin-left: 43%;
+}
+
+.claselist :hover{
+	
+	background-color: white;
+}
